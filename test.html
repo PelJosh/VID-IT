@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="videoDiv" id="shareBtn">
+        Video
+    </div>
+    <div class="videoDiv" id="muteBtn">
+        Mute
+    </div>
+    <script>
+        // async function startCapture() {
+        //     let stream = null;
+    
+        //     try {
+        //         stream = await navigator.mediaDevices.getUserMedia({ video:true });
+        //         video = document.createElement("video");
+        //         video.srcObject = stream;
+        //         video.setAttribute('autoplay', true); /* THIS */
+        //         document.body.appendChild(video);
+        //     } catch(err) {
+        //         console.error(err);
+        //     }
+        // }
+        // // document.getElementById("shareBtn").addEventListener("click", () => {
+    
+        // //     startCapture({ video:true });
+    
+        // // });
+        // startCapture()
+        let liveStream = null;
+        let videoBlock;
+        const stream = (value)=>{
+            navigator.mediaDevices.getUserMedia(
+                {
+                    audio: true,
+                    video: value
+                }
+                ).then(stream => {
+                    liveStream = stream;
+                    videoBlock = document.createElement('video');
+                    videoBlock.srcObject = stream;
+                    document.body.appendChild(videoBlock);
+                    videoBlock.play();
+                    console.log('stream: ', liveStream.getVideoTracks()[0])
+
+                }).catch(err => console.log(err))
+            }
+            let status = false;
+            stream(true)
+            let i = 0;
+            document.getElementById('shareBtn').addEventListener('click', ()=>{
+                // console.log('liveStream active: ',liveStream.active)
+                // status? (status = false, stream(status)) : (status = true, stream(status));
+                i++;
+                videoBlock.muted == !videoBlock.muted;
+                liveStream.getVideoTracks()[0].muted ? !liveStream.getVideoTracks()[0].muted : !liveStream.getVideoTracks()[0].muted
+
+                console.log(liveStream.getVideoTracks()[0].muted)
+                
+            })
+
+            document.getElementById('muteBtn').addEventListener('click', ()=>{
+                videoBlock.muted;
+            })
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vidit</title>
+    <link rel="stylesheet" href="signup.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script>
+    </script>
+  </head>
+  <body>
+    <div class="Wrapper">
+      <div class="image">
+        <img src="/signup.svg" id="bgImage" />
+      </div>
+      <div class="SignUp-Form_Container">
+        <h2>Fill Form To Sign Up</h2>
+        <form class="SignUp-Form" action="/signup" method="POST">
+          <label for="name">First Name</label>
+          <input
+            name="firstName"
+            id="name"
+            placeholder="First Name"
+            onChange=""
+          />
+          <label for="name">Last Name</label>
+          <input
+            name="lastName"
+            id="name"
+            placeholder="Last Name"
+            onChange=""
+          />
+          <label for="email">Email</label>
+          <input
+            type="email"
+            placeholder="yours@email.com"
+            id="email"
+            name="email"
+          />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            placeholder="********"
+            id="password"
+            name="password"
+          />
+
+          <button type="submit">Sign Up</button>
+        </form>
+        <button class="link-btn" onClick="">
+          <a href="login">Already have an Account? click here to Sign in</a>
+        </button>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

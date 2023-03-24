@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vidit</title>
+    <link rel="stylesheet" href="login.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script>
+        //variables
+    </script>
+  </head>
+  <body>
+    <div >
+        <div class="vidit" id="vidit">
+          <h1 id="vid">VIDIT</h1>
+        </div>
+        <div class="nss" id="header">
+          <a href="#"> New to Vidit? </a>
+          <a href="signup">Signup Free </a>
+          <a href="#">Support </a>
+        </div>
+      </div>
+      <div class="body">
+        <div class="leftside">
+          <div class="image">
+            <img src="/vimage.png" />
+          </div>
+        </div>
+        <div class="rightside">
+          <div class="formside">
+            <h1 class="login">Login</h1>
+            <form action="/login" method="POST">
+              <input type="email" class="input" placeholder="Email Address" name="email" />
+              <br />
+              <input type="password" class="input" placeholder="Password" name="password"/>
+              <p class="forgotpassword">
+                <a href="#">Forgot password?</a>
+              </p>
+              <div class="submit">
+                
+                  <button type="submit">Sign In</button>
+                
+              </div>
+            </form>
+          </div>
+          <div class="altertext">
+            <p class="alter">
+              By signing in I agree to the Vidit's Privacy Statement and Terms of
+              Service.
+            </p>
+          </div>
+          <div class="check">
+            <label> <input type="checkbox" />Stay signed in</label>
+          </div>
+          <div class="stay">
+            <div class="hr">
+              <hr />
+            </div>
+            <div>
+              <p class="hrText">Or sign in with</p>
+            </div>
+            <div class="hr">
+              <hr />
+            </div>
+          </div>
+          <div class="icon">
+            <section class="logoBottom">
+              <img id="key" class="icons" src="/key.jpeg" />
+              <p class="companyLogo">SSO</p>
+            </section>
+            <section class="logoBottom">
+              <img id="apple" class="icons" src="/apple.svg" />
+              <p class="companyLogo">Apple</p>
+            </section>
+            <section class="logoBottom">
+              <img id="google" class="icons" src="/google.jpeg" />
+              <p class="companyLogo">Google</p>
+            </section>
+            <section class="logoBottom">
+              <img id="facebook" class="icons" src="/facebook.svg" />
+              <p class="companyLogo">Facebook</p>
+            </section>
+          </div>
+          <div class="reCAPTCHA">
+            <p>
+              VIDIT is protected by reCAPTCHA and the
+              <a href="#"
+                >Vidit's <br />
+                Privacy Statement</a
+              >
+              and <a href="#">Terms of Service</a> apply.
+            </p>
+          </div>
+        </div>
+      </div>
+    
+    </body>
+  <script src="script.js"></script>
+</html>
